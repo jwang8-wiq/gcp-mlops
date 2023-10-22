@@ -1,0 +1,12 @@
+{
+    "sqltools.connections": [
+        {
+            "name": "car-prod",
+            "authenticator": "SERVICE_ACCOUNT",
+            "location": "us",
+            "previewLimit": 50,
+            "driver": "BigQuery",
+            "keyfile": "C:\\jiaming\\work\\driver\\gcp-wow-rwds-ai-car-prod-db8ae8c54a6e.json"
+        }
+    ]
+}

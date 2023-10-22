@@ -1,0 +1,24 @@
+buoyant-ceiling-402604
+
+gcloud auth login
+
+gcloud config set project buoyant-ceiling-402604
+
+
+Google Container Registry API
+Artifact Registry API
+Cloud Build API
+
+pip3 install flask
+pip3 install pytest
+
+net localgroup docker-users WOWCORP\njwgc /add
+
+--Set up authentication for Docker
+https://cloud.google.com/artifact-registry/docs/docker/authentication#gcloud-helper
+gcloud auth configure-docker us-central1-docker.pkg.dev
+
+
+
+$ docker login -u "james1103" -p "wjmW#1209" docker.io
+$ docker push james1103/demo-flask-app:0.1.0
