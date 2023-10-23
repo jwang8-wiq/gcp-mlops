@@ -14,7 +14,7 @@ def test_main_endpoint(mock_get_table, mock_load_table_from_uri, client):
     mock_load_table_from_uri.return_value = mock_load_job
 
     mock_table = MagicMock()
-    mock_table.num_rows = 50
+    mock_table.num_rows = 40
     mock_get_table.return_value = mock_table
 
     response = client.get('/')

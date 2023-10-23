@@ -9,8 +9,28 @@ Google Container Registry API
 Artifact Registry API
 Cloud Build API
 
+--mlops-py38
 pip3 install flask
 pip3 install pytest
+
+pip3 install google
+pip3 install google-cloud-bigquery
+--mlops-py38
+
+
+pip3 install google-cloud-storage==2.1.0
+pip3 install google-cloud-aiplatform==1.7.0
+pip3 install kfp==1.8.9
+pip3 install google-cloud-pipeline-components==2.0.0
+
+pip3 install apache-airflow==2.3.3
+
+pip3 install  pytest==7.0.1
+pip3 install cloud-composer-dag-test-utils==1.0.0
+
+
+
+pip3 install yfinance>=0.2.1
 
 net localgroup docker-users WOWCORP\njwgc /add
 
