@@ -1,5 +1,7 @@
 buoyant-ceiling-402604
 
+service  account: 895414066018@cloudbuild.gserviceaccount.com
+
 gcloud auth login
 
 gcloud config set project buoyant-ceiling-402604
@@ -9,12 +11,44 @@ Google Container Registry API
 Artifact Registry API
 Cloud Build API
 
+
+where python
+pip list
+pip install -r requirements.txt
+
 --mlops-py38
 pip3 install flask
 pip3 install pytest
 
 pip3 install google
 pip3 install google-cloud-bigquery
+
+--pip install -r requirements.txt
+Flask==2.1.0
+gunicorn==20.1.0
+scikit-learn==1.2.2 #OPTIONAL
+xgboost==1.6.2
+pandas
+pyarrow
+pytest
+category_encoders
+requests
+google-cloud-storage
+
+
+pip install -U imbalanced-learn
+conda install -c conda-forge imbalanced-learn
+
+pip install --upgrade scikit-learn
+pip install --upgrade imbalanced-learn
+
+pip uninstall scikit-learn
+pip install scikit-learn==1.0.2
+
+pip uninstall Flask
+pip install Flask==2.2.2
+pip install Werkzeug==2.2.2
+
 --mlops-py38
 
 

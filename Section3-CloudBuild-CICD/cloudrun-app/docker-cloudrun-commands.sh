@@ -17,3 +17,10 @@ docker tag demo-flask-app us-central1-docker.pkg.dev/buoyant-ceiling-402604/pyth
 docker push us-central1-docker.pkg.dev/buoyant-ceiling-402604/python-apps/demo-flask-app
 
 gcloud run deploy demo-flask-app2 --image us-central1-docker.pkg.dev/buoyant-ceiling-402604/python-apps/demo-flask-app --region us-central1
+
+
+# #test
+# docker build -t gcr.io/buoyant-ceiling-402604/demo-flask-app .
+
+
+docker tag gcr.io/buoyant-ceiling-402604/demo-flask-app james1103/demo-flask-app:0.0.1

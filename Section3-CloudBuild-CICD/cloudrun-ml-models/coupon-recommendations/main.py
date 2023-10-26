@@ -55,7 +55,7 @@ def _load_model():
 
 def load_model():
     storage_client = storage.Client()
-    bucket_name = "sid-ml-ops"
+    bucket_name = "buoyant-ceiling-402604-bucket"
     bucket = storage_client.get_bucket(bucket_name)
     blob = bucket.blob("ml-artifacts/xgboost_coupon_recommendation.pkl")
     blob.download_to_filename("xgboost_coupon_recommendation.pkl")
