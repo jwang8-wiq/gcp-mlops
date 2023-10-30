@@ -1,11 +1,11 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/udemy-mlops/bank-campaign-model', '.']
+  args: ['build', '-t', 'gcr.io/buoyant-ceiling-402604/bank-campaign-model', '.']
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/udemy-mlops/bank-campaign-model']
+  args: ['push', 'gcr.io/buoyant-ceiling-402604/bank-campaign-model']
 
-- name: 'gcr.io/udemy-mlops/bank-campaign-model'
+- name: 'gcr.io/buoyant-ceiling-402604/bank-campaign-model'
   entrypoint: 'bash'
   args:
    - '-c'
@@ -13,13 +13,13 @@ steps:
       python -m pytest
 
 - name: 'gcr.io/cloud-builders/git'
-  args: ['clone', 'https://github.com/sidoncloud/model-training-repo.git']
+  args: ['clone', 'https://github.com/jwang8-wiq/model-training-repo.git']
 
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ['cp', 'model-training-repo/bank_campaign_model_training.py', 'gs://us-central1-mlops-airflow-faa6f9bc-bucket/dags']
+  args: ['cp', 'model-training-repo/bank_campaign_model_training.py', 'gs://us-central1-dev-airflow-8611dbb1-bucket/dags']
 
 images:
-- 'gcr.io/udemy-mlops/bank-campaign-model'
+- 'gcr.io/buoyant-ceiling-402604/bank-campaign-model'
 
 options:
   logging: CLOUD_LOGGING_ONLY

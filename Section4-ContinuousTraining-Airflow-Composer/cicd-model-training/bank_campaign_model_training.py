@@ -14,7 +14,7 @@ from google.cloud import bigquery
 from datetime import datetime
 
 storage_client = storage.Client()
-bucket = storage_client.bucket("sid-ml-ops")
+bucket = storage_client.bucket("buoyant-ceiling-402604-bucket")
 
 def load_data(path):
     return pd.read_csv(path,sep=";")
@@ -71,17 +71,17 @@ def save_model_artifact(model_name,pipeline):
     artifact_name = model_name+'_model.joblib'
     dump(pipeline,artifact_name)
     # Uncomment below lines for cloud execution
-    model_artifact = bucket.blob('ml-artifacts/'+artifact_name)
+    model_artifact = bucket.blob('bank_campaign_artifact/'+artifact_name)
     model_artifact.upload_from_filename(artifact_name)
 
 def load_model_artifact(file_name):
-    blob = bucket.blob("ml-artifacts/" + file_name)
+    blob = bucket.blob("bank_campaign_artifact/" + file_name)
     blob.download_to_filename(file_name)
     return load(file_name)
 
 def write_metrics_to_bigquery(algo_name, training_time, model_metrics):
     client = bigquery.Client()
-    table_id = "udemy-mlops.ml_ops.bank_campaign_model_metrics"
+    table_id = "buoyant-ceiling-402604.ml_ops.bank_campaign_model_metrics"
     table = bigquery.Table(table_id)
 
     row = {"algo_name": algo_name, "training_time": training_time.strftime('%Y-%m-%d %H:%M:%S'), "model_metrics": json.dumps(model_metrics)}
@@ -93,7 +93,7 @@ def write_metrics_to_bigquery(algo_name, training_time, model_metrics):
         print("Error inserting metrics into BigQuery:", errors)
 
 def main():
-    input_data_path = "gs://sid-ml-ops/bank_campaign_data/bank-additional.csv"
+    input_data_path = "gs://buoyant-ceiling-402604-bucket/bank_campaign_data/bank-additional.csv"
     model_name='xgboost'
     df = load_data(input_data_path)
     categorical_cols = ['job', 'marital', 'education', 'default', 'housing', 'loan', 'contact', 'month', 'day_of_week', 'poutcome']

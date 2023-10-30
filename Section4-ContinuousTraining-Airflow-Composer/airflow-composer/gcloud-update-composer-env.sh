@@ -1,3 +1,3 @@
-gcloud composer environments update mlops-airflow  \
+gcloud composer environments update dev-airflow \
 --location us-central1 \
 --update-pypi-packages-from-file requirements.txt

@@ -22,7 +22,7 @@ logger = logging_client.logger('bank-campaign-training-logs')
 def validate_csv():
     # Load data
     fs = gcsfs.GCSFileSystem()
-    with fs.open('gs://sid-ml-ops/bank_campaign_data/bank-campaign-new-part1.csv') as f:
+    with fs.open('gs://buoyant-ceiling-402604-bucket/bank_campaign_data/bank-campaign-new-part1.csv') as f:
         df = pd.read_csv(f, sep=";")
     
     # Define expected columns
@@ -46,7 +46,7 @@ def validate_csv():
 
 def read_last_training_metrics():
     client = bigquery.Client()
-    table_id = "udemy-mlops.ml_ops.bank_campaign_model_metrics"
+    table_id = "buoyant-ceiling-402604.ml_ops.bank_campaign_model_metrics"
     query = f"""
         SELECT *
         FROM `{table_id}`
@@ -62,7 +62,7 @@ def evaluate_model():
     # Load data for evaluation
     fs = gcsfs.GCSFileSystem()
 
-    with fs.open('gs://sid-ml-ops/bank_campaign_data/bank-campaign-new-part1.csv') as f:
+    with fs.open('gs://buoyant-ceiling-402604-bucket/bank_campaign_data/bank-campaign-new-part1.csv') as f:
         df = pd.read_csv(f, sep=";")
     
     # Preprocess the data
