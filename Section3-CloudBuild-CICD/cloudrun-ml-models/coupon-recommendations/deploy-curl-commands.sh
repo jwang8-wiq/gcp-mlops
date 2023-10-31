@@ -1,10 +1,10 @@
 # docker build -t xgboost_coupon_model .
 
-# docker tag xgboost_coupon_model gcr.io/udemy-mlops/xgboost_coupon_model
+# docker tag xgboost_coupon_model gcr.io/buoyant-ceiling-402604/xgboost_coupon_model
 
-# docker push gcr.io/udemy-mlops/xgboost_coupon_model
+# docker push gcr.io/buoyant-ceiling-402604/xgboost_coupon_model
 
-# gcloud run deploy xgboost-coupon-model --image  gcr.io/udemy-mlops/xgboost_coupon_model --region us-central1
+# gcloud run deploy xgboost-coupon-model --image  gcr.io/buoyant-ceiling-402604/xgboost_coupon_model --region us-central1
 
 curl -X POST https://xgboost-coupon-model-g65743asta-uc.a.run.app/predict \
 -H "Content-Type: application/json" \

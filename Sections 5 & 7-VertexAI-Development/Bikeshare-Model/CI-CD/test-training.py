@@ -10,13 +10,13 @@ from sklearn.pipeline import make_pipeline
 from model_training_code import load_data,preprocess_data,train_model,save_model_artifact
 
 storage_client = storage.Client()
-bucket = storage_client.bucket("sid-vertex-mlops")
+bucket = storage_client.bucket("buoyant-ceiling-402604-bucket")
 
 def load_data(filename):
     df = pd.read_csv(filename)
     return df
 
-df = load_data('gs://sid-vertex-mlops/bike-share/hour.csv')
+df = load_data('gs://buoyant-ceiling-402604-bucket/bike-share/hour.csv')
 X, y = preprocess_data(df)
 
 def test_model_name_is_valid():

@@ -8,7 +8,7 @@ from joblib import dump
 from sklearn.pipeline import make_pipeline
 
 storage_client = storage.Client()
-bucket = storage_client.bucket("sid-vertex-mlops")
+bucket = storage_client.bucket("buoyant-ceiling-402604-bucket")
 
 def load_data(filename):
     df = pd.read_csv(filename)
@@ -56,7 +56,7 @@ def save_model_artifact(model_name, pipeline):
 
 def main():
     model_name = "random_forest_regressor"
-    filename = 'gs://sid-vertex-mlops/bike-share/hour.csv'
+    filename = 'gs://buoyant-ceiling-402604-bucket/bike-share/hour.csv'
     df = load_data(filename)
     X, y = preprocess_data(df)
     # model, rmse = train_model(X, y)

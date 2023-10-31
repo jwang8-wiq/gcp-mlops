@@ -44,7 +44,7 @@ def validate_input_data():
 
 def read_last_training_metrics():
     client = bigquery.Client()
-    table_id = "udemy-mlops.ml_ops.advertising_roi_model_metrics"
+    table_id = "buoyant-ceiling-402604.ml_ops.advertising_roi_model_metrics"
     query = f"""
         SELECT *
         FROM `{table_id}`

@@ -2,6 +2,9 @@ buoyant-ceiling-402604
 
 service  account: 895414066018@cloudbuild.gserviceaccount.com
 
+buoyant-ceiling-402604-bucket
+buoyant-ceiling-402604-kubeflow-v1
+
 gcloud auth login
 
 gcloud config set project buoyant-ceiling-402604

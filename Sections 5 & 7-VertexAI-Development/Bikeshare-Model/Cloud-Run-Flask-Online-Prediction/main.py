@@ -14,7 +14,7 @@ def predict():
     data = request.get_json(force=True) 
     instance = data['instance']
     endpoint_id = 8190565580512690176
-    project_id = 1090925531874
+    project_id = 895414066018
     prediction = predict_instance(project_id, endpoint_id, instance)
     return jsonify({'prediction': prediction})
 

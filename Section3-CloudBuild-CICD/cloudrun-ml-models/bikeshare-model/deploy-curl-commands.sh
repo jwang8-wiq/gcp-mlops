@@ -6,11 +6,11 @@ curl -X POST http://127.0.0.1:5052/predict \
 
 docker build -t bike_share_model_inference .
 
-docker tag bike_share_model_inference gcr.io/udemy-mlops/bike_share_model_inference
+docker tag bike_share_model_inference gcr.io/buoyant-ceiling-402604/bike_share_model_inference
 
-docker push gcr.io/udemy-mlops/bike_share_model_inference
+docker push gcr.io/buoyant-ceiling-402604/bike_share_model_inference
 
-gcloud run deploy bikeshare-model-inference --image  gcr.io/udemy-mlops/bike_share_model_inference --region us-central1
+gcloud run deploy bikeshare-model-inference --image  gcr.io/buoyant-ceiling-402604/bike_share_model_inference --region us-central1
 
 # Submit your cloudbuild.yaml file 
 gcloud builds submit --region us-central1

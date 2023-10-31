@@ -3,8 +3,8 @@
 - cloud build 
 - eventarc
 
-# gcloud projects add-iam-policy-binding 1090925531874 \
-#   --member serviceAccount:1090925531874-compute@developer.gserviceaccount.com  \
+# gcloud projects add-iam-policy-binding 895414066018 \
+#   --member serviceAccount:895414066018-compute@developer.gserviceaccount.com  \
 #   --role='roles/aiplatform.admin'
   
 

@@ -6,7 +6,7 @@ from google.cloud import storage
 from sklearn.metrics import precision_score, recall_score, roc_auc_score, accuracy_score,confusion_matrix
 
 storage_client = storage.Client()
-bucket = storage_client.bucket("sid-kubeflow-v1")
+bucket = storage_client.bucket("buoyant-ceiling-402604-kubeflow-v1")
 
 def purpose_encode(x):
     if x == "Consumer Goods":
@@ -138,7 +138,7 @@ def evaluate_model(model, X_test, y_test):
     
     return accuracy,precision,recall
     
-input_file = "gs://sid-kubeflow-v1/credit-scoring/credit_files.csv"
+input_file = "gs://buoyant-ceiling-402604-kubeflow-v1/credit-scoring/credit_files.csv"
 credit_df = pd.read_csv(input_file)
 credit_df = preprocess_data(credit_df)
 

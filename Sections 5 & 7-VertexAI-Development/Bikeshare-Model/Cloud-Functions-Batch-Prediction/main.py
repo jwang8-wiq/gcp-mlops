@@ -7,16 +7,16 @@ import json
 @functions_framework.cloud_event
 def trigger_batch_predictions(cloud_event):
 
-    project_id = "udemy-mlops"
+    project_id = "buoyant-ceiling-402604"
     region = "us-central1"
-    staging_bucket="gs://sid-vertex-mlops"
+    staging_bucket="gs://buoyant-ceiling-402604-bucket"
 
     aiplatform.init(project=project_id, location=region, staging_bucket=staging_bucket)
 
-    gcs_input_uri = 'gs://sid-vertex-mlops/bike-share/batch.csv'
-    BUCKET_URI = "gs://sid-vertex-mlops/bikeshare-batch-prediction-result/"
+    gcs_input_uri = 'gs://buoyant-ceiling-402604-bucket/bike-share/batch.csv'
+    BUCKET_URI = "gs://buoyant-ceiling-402604-bucket/bikeshare-batch-prediction-result/"
     model_id = 675603715779985408
-    project_id = 1090925531874
+    project_id = 895414066018
     model = aiplatform.Model('projects/{}/locations/us-central1/models/{}'.format(project_id,model_id))
 
     batch_predict_job = model.batch_predict(

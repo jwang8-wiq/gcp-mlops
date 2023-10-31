@@ -7,7 +7,7 @@ from xgboost import XGBClassifier
 from google.cloud import storage
 
 storage_client = storage.Client()
-bucket = storage_client.bucket("sid-kubeflow-v1")
+bucket = storage_client.bucket("buoyant-ceiling-402604-kubeflow-v1")
 
 def load_data(file_path):
     df = pd.read_csv(file_path)
@@ -108,7 +108,7 @@ def save_model_artifact(pipeline):
     model_artifact = bucket.blob('coupon-recommendation/artifacts/'+artifact_name)
     model_artifact.upload_from_filename(artifact_name)
 
-input_file = "gs://sid-kubeflow-v1/coupon-recommendation/in-vehicle-coupon-recommendation.csv"
+input_file = "gs://buoyant-ceiling-402604-kubeflow-v1/coupon-recommendation/in-vehicle-coupon-recommendation.csv"
 df = load_data(input_file)
 
 # Preprocess data

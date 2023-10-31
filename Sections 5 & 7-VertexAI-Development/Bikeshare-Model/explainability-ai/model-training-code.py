@@ -8,7 +8,7 @@ from joblib import dump
 from sklearn.pipeline import make_pipeline
 
 storage_client = storage.Client()
-bucket = storage_client.bucket("sid-kubeflow-v1")
+bucket = storage_client.bucket("buoyant-ceiling-402604-kubeflow-v1")
 
 def load_data(filename):
     df = pd.read_csv(filename)
@@ -56,7 +56,7 @@ def save_model_artifact(pipeline):
 
 def main():
     model_name = "random_forest_regressor"
-    filename = 'gs://sid-kubeflow-v1/bikeshare-model/hour.csv'
+    filename = 'gs://buoyant-ceiling-402604-kubeflow-v1/bikeshare-model/hour.csv'
     df = load_data(filename)
     X, y = preprocess_data(df)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)

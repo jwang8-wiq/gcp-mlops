@@ -8,7 +8,7 @@ from joblib import dump
 from sklearn.pipeline import make_pipeline
 
 storage_client = storage.Client()
-bucket = storage_client.bucket("sid-vertex-mlops")
+bucket = storage_client.bucket("buoyant-ceiling-402604-bucket")
 
 def load_data(filename):
     df = pd.read_csv(filename)
@@ -51,7 +51,7 @@ def save_model_artifact(pipeline):
     model_artifact.upload_from_filename(artifact_name)
 
 def main():
-    filename = 'gs://sid-vertex-mlops/bike-share/hour.csv'
+    filename = 'gs://buoyant-ceiling-402604-bucket/bike-share/hour.csv'
     df = load_data(filename)
     X, y = preprocess_data(df)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
