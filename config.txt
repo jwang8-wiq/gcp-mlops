@@ -79,3 +79,6 @@ gcloud auth configure-docker us-central1-docker.pkg.dev
 
 $ docker login -u "james1103" -p "wjmW#1209" docker.io
 $ docker push james1103/demo-flask-app:0.1.0
+
+
+add more
